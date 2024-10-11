@@ -1,0 +1,69 @@
+---
+import primerIcono from "../../assets/primerIcono.png"
+import segundoIcono from "../../assets/segundoIcono.png"
+import tercerIcono from "../../assets/tercerIcono.png"
+
+import CardInfo from "./CardInfo.astro"
+
+const { ...props } = Astro.props
+
+---
+
+<div>
+    <CardInfo
+        title="Instalación"
+        imagePath={primerIcono.src}
+        imageAlt="Primer icono"
+        background="var(--microsoft-blue-600)"
+        color="var(--microsoft-blue-50)"
+        href="/instalacion"
+    >
+        <p>
+            Cómo instalar las diferentes
+            versiones de SQL Server.
+        </p>
+        <p>
+            Y su configuración básica para el uso diario.
+        </p>
+    </CardInfo>
+
+    <CardInfo
+        title="Introducción"
+        imagePath={segundoIcono.src}
+        imageAlt="Primer icono"
+        background="#E5E5E5"
+        color="#2F2F2F"
+    >
+        <p>
+            Según palabras de Microsoft,
+            se trata de un sistema de administración de bases de datos relacionales.
+        </p>
+        <p>
+            
+            O abreviando, RDBMS.
+        </p>
+    </CardInfo>
+
+    <CardInfo
+        title="Documentación"
+        imagePath={tercerIcono.src}
+        imageAlt="Primer icono"
+        background="#2F2F2F"
+        color="#E5E5E5"
+    >
+    <p>
+        Aprende cómo se administra una base de datos relacional con SQL Server.
+    </p>
+    </CardInfo>
+</div>
+
+<style>
+    div {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        text-align: center;
+    
+    }
+</style>

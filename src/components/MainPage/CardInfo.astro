@@ -1,0 +1,63 @@
+---
+/**
+ * @param {
+ *  title : string
+ *  imagePath : string
+ *  imageAlt : string
+ *  background : string
+ *  color : string
+ *  class : string
+ *  href : string
+ * } props
+ * **/
+const { title, imagePath, imageAlt,
+        background, color, href
+    } = Astro.props
+
+---
+
+<section>
+    <img src={imagePath} alt={imageAlt} />
+    <h4 class="fuente-subtitulos">
+        {title}
+    </h4>
+    <article>
+        <slot />
+    </article>
+    <a href={href}>Empezar</a>
+</section>
+
+<style define:vars={{ background, color }}>
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        gap: 2rem;
+        max-width: 75vw;
+        width: clamp(15rem, 75vw,20rem);
+
+        background-color: var(--background);
+        color: var(--color);
+    }
+
+    img {
+        width: 5rem;
+        height: 5rem;
+        object-fit: contain;
+    }
+
+    article {
+        width: 100%;
+        height: 6rem;
+        font-weight: 400;
+    }
+
+    a {
+        background-color: var(--color);
+        color: var(--background);
+        border-radius: 0.2rem;
+        padding-inline: 0.5rem;
+        padding-block: 0.1rem 0.3rem;
+    }
+</style>

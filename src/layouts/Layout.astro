@@ -1,0 +1,138 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Preheader from '../components/Preheader.astro';
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/favicon.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<ViewTransitions />
+	</head>
+	<body class="font-titulos">
+		<Preheader />
+		<Header />
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat+Subrayada:wght@400;700&family=Montserrat:wght@100..900&display=swap');
+
+	/* Estilos de html */
+	html {
+		font-family: system-ui, sans-serif;
+		background: var(--microsoft-blue-50);
+		color : var(--microsoft-blue-950);
+	}
+	
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100dvh;
+	}
+
+	main {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-block: 1.5rem;
+		gap: 1.5rem;
+	}
+
+	pre {
+		padding: 1rem;
+		border-radius: 0.3rem;
+	}
+
+	h1,h2,h3,h4,h5,h6 {
+		font-family: "Montserrat Subrayada", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+	}
+
+	/* Fuentes */
+	.fuente-legible {
+		font-family : "Montserrat", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	}
+	.fuente-titulos {
+		font-family: "Montserrat Subrayada", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+	}
+	.fuente-subtitulos {
+		font-family: "Montserrat Alternates", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	}
+
+	/* Tamaños */
+	.tamano-lg {
+		/* Se ajusta automaticamente dependiendo del viewport(tamaño) de la pantalla */
+		font-size: clamp(1.5rem, 1vw, 2rem);
+	}
+
+	.tamano-md {
+		/* Se ajusta automaticamente dependiendo del viewport(tamaño) de la pantalla */
+		font-size: clamp(0.5rem, 1vw, 1rem);
+	}
+
+	/* Resetear estilos de HTML */
+	* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	a {
+		text-decoration: none;
+		/* El color de texto es el mismo que el color de texto que su elemento padre */
+		color: inherit;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	/* Colores globales */
+	/* Referencia https://uicolors.app/create */
+	:root {
+		--microsoft-blue-50		: #f0f8ff;
+		--microsoft-blue-100	: #e0effe;
+		--microsoft-blue-200	: #b9e0fe;
+		--microsoft-blue-300	: #7cc7fd;
+		--microsoft-blue-400	: #36acfa;
+		--microsoft-blue-500	: #0c91eb;
+		--microsoft-blue-600	: #0078d4;
+		--microsoft-blue-700 	: #015aa3;
+		--microsoft-blue-800 	: #064d86;
+		--microsoft-blue-900 	: #0b416f;
+		--microsoft-blue-950 	: #07294a;
+
+		--microsoft-gray 		: #737373;
+	}
+
+	/* Tamaños de pantalla */
+
+	/* Si mide menos de 640 pixeles */
+	:root {
+		--flex-col-si-es-muy-pequeno : column;
+		--flex-row-si-es-muy-pequeno : row;
+		--esconder-si-es-muy-pequeno : none;
+	}
+
+	/* Si mide más de 640px */
+	@media (min-width: 640px) {
+		:root {
+			--flex-col-si-es-muy-pequeno : row;
+			--flex-row-si-es-muy-pequeno : column;
+			--esconder-si-es-muy-pequeno : block;
+		}
+	}
+	
+</style>

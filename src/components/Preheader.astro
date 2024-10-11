@@ -1,0 +1,57 @@
+---
+import microsoftIcon from "../assets/microsoftIcon.png"
+/* Toma las propiedades que se le pasen por parametro */
+const { ...props } = Astro.props
+
+
+---
+
+<div>
+    <figure>
+        <img src={microsoftIcon.src} width={microsoftIcon.width} height={microsoftIcon.height} alt="Icono de microsoft"/>
+        <figcaption>Microsoft</figcaption>
+        <hr />
+        <p>Plataforma de Datos</p>
+    </figure>
+    <a href="https://www.microsoft.com/es-es/sql-server/sql-server-downloads">
+        Probar SQL Server 2022
+    </a>
+</div>
+
+<style>
+    div {
+        display: flex;
+        flex-direction: var(--flex-col-si-es-muy-pequeno);
+        justify-content: space-between;
+        align-items: center;
+        padding: clamp(0.5rem, 5vw, 1rem);
+    }
+    figure {
+        display: flex;
+        flex-direction: var(--flex-col-si-es-muy-pequeno);
+        align-items: center;
+        gap: clamp(0.5rem, 3vw, 1rem);
+    }
+    figcaption {
+        color: var(--microsoft-gray);
+    }
+
+    img {
+        aspect-ratio: 1/1;
+    }
+
+    hr {
+        display: var(--esconder-si-es-muy-pequeno);
+        border: 1px var(--microsoft-blue-950) solid;
+        width: 1px;
+        height: 1.5rem;
+    }
+
+    a {
+        background-color: black;
+        color: white;
+        padding: 0.5rem;
+        
+        font-size: x-small;
+    }
+</style>

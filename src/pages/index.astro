@@ -1,0 +1,37 @@
+---
+import CardsContainer from '../components/MainPage/CardsContainer.astro';
+import Preheader from '../components/Preheader.astro';
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="SQL Server Docs">
+	<main>
+
+		<h2 class="fuente-subtitulos tamano-lg">
+			Proyecto de documentación de
+			SQL Server
+		</h2>
+
+		<CardsContainer/>
+
+		<h3 class="fuente-legible">
+			Nombre de la persona que hizo el proyecto
+		</h3>
+
+	</main>
+</Layout>
+
+<style>
+
+	h2 {
+		max-width: 30rem;
+		font-weight: 500;
+		color: black;
+		text-align: center;
+	}
+	h3 {
+		font-weight: 500;
+		color: black;
+		text-align: center;
+	}
+</style>
