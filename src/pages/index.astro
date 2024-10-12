@@ -15,7 +15,8 @@ import Layout from '../layouts/Layout.astro';
 		<CardsContainer/>
 
 		<h3 class="fuente-legible">
-			Nombre de la persona que hizo el proyecto
+			Proyecto basado en la página de
+			<a href="https://www.microsoft.com/es-es/sql-server/sql-server-downloads">Microsoft</a>
 		</h3>
 
 	</main>
@@ -33,5 +34,9 @@ import Layout from '../layouts/Layout.astro';
 		font-weight: 500;
 		color: black;
 		text-align: center;
+	}
+	a {
+		color: var(--microsoft-blue-950);
+		text-decoration : var(--microsoft-blue-800) wavy underline;
 	}
 </style>
