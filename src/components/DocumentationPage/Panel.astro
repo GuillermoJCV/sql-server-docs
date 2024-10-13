@@ -1,0 +1,150 @@
+---
+import HideToggler from "./PanelComponent/HideToggler.astro";
+
+---
+
+
+<aside id="panel">
+    <h3 class="fuente-subtitulos">
+        Búsqueda rápida
+    </h3>
+    <section>
+        <article>
+            <h4 class="fuente-legible">
+                Bases de datos
+            </h4>
+            <ul>
+                <li>Crear bases de datos</li>
+                <li>Eliminar bases de datos</li>
+            </ul>
+        </article>
+
+        <article>
+            <h4 class="fuente-legible">
+                Tablas
+            </h4>
+            <ul>
+                <li>Crear tabla</li>
+                <li>Eliminar tabla</li>
+                <li>Alterar tabla</li>
+            </ul>
+        </article>
+
+        <article>
+            <h4 class="fuente-legible">
+                Consultas
+            </h4>
+            <ul>
+                <li>Insertar Datos</li>
+                <li>Leer Datos</li>
+                <li>Actualizar Datos</li>
+                <li>Eliminar Datos</li>
+            </ul>
+        </article>
+
+        <article>
+            <h4 class="fuente-legible">
+                Tipos de datos
+            </h4>
+            <ul>
+                <li>char(n)</li>
+                <li>varchar(n)</li>
+                <li>varchar(max)</li>
+                <li>text</li>
+                <li>nchar</li>
+                <li>nvarchar</li>
+                <li>nvarchar(max)</li>
+                <li>ntext</li>
+                <li>binary(n)</li>
+                <li>varbinary</li>
+                <li>varbinary(max)</li>
+                <li>image</li>
+            </ul>
+        </article>
+
+        <article>
+            <h4 class="fuente-legible">
+                Claves
+            </h4>
+            <ul>
+                <li>Claves primarias</li>
+                <li>Claves foraneas</li>
+            </ul>
+        </article>
+    </section>
+
+
+    <HideToggler/>
+
+</aside>
+
+<style>
+
+    aside {
+        background-color: var(--microsoft-blue-50);
+
+        display: flex;
+        flex-direction: column;
+        width: var(--panel-tamano);
+        height: 100%;
+        border-right: 1px var(--microsoft-blue-darker);
+        gap: 1rem;
+        padding : clamp(0rem, 1vw, 1rem);
+
+        position: var(--panel-position);
+        inset-block: 0;
+        margin-block: var(--panel-margin);
+
+        transform: var(--panel-desactivado);
+        transition: transform 500ms;
+    }
+    .esconder {
+        transform: var(--panel-activado);
+    }
+
+    h3 {
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+
+        font-size: clamp(1rem, 1vw, 2rem);
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        overflow-y: auto;
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        user-select: none;
+    }
+
+    h4 {
+        width: 100%;
+        font-weight: 400;
+        text-decoration: underline;
+        line-height: 1.5rem;
+    }
+    h4:hover {
+        color: var(--microsoft-blue-800);
+        cursor: pointer;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    li:hover {
+        color: var(--microsoft-blue-800);
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+</style>
