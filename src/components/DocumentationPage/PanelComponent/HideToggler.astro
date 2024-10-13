@@ -1,0 +1,68 @@
+---
+import LeftArrow from "../../Icons/LeftArrow.astro";
+import RightArrow from "../../Icons/RightArrow.astro";
+
+---
+
+<i id="abrir-panel">
+    <RightArrow size="20" id="flecha-derecha" />
+    <LeftArrow class="esconder" size="20" id="flecha-izquierda" />
+<script is:inline>
+console.log("Hello world")
+
+/* Boton para abrir panel */
+const btnAbrirPanel = document.querySelector("#abrir-panel")
+
+const flechaIzquierda = btnAbrirPanel?.querySelector("#flecha-izquierda")
+const flechaDerecha = btnAbrirPanel?.querySelector("#flecha-derecha")
+
+const panel = document.querySelector("#panel")
+
+/* Si existen los anteriores elementos, se agrega el evento de click */
+if(btnAbrirPanel && panel && flechaIzquierda && flechaDerecha) {
+    btnAbrirPanel.addEventListener("click", () => {
+        panel.classList.toggle("esconder")
+        flechaIzquierda.classList.toggle("esconder")
+        flechaDerecha.classList.toggle("esconder")
+    })
+}
+else {
+    console.error("No se encontraron elementos con los selectores especificados.")
+    !btnAbrirPanel && console.error("btnAbrirPanel:", btnAbrirPanel)
+    !panel && console.error("panel:", panel)
+    !flechaIzquierda && console.error("flechaIzquierda:", flechaIzquierda)
+    !flechaDerecha && console.error("flechaDerecha:", flechaDerecha)
+}
+
+</script>
+</i>
+
+<style>
+    i {
+        background-color: var(--microsoft-blue-950);
+        color: var(--microsoft-blue-50);
+
+        position: absolute;
+        top: 1rem;
+        right: -2.5rem;
+
+        display: var(--mostrar-flex-si-es-muy-pequeno);
+        align-items: center;
+        justify-content: center;
+
+        padding: 0.1rem;
+        border-radius: 0.2rem;
+
+        cursor: pointer;
+        user-select: none;
+
+        scale: 1;
+        transition: scale 150ms;
+    }
+    i:hover {
+        background-color: var(--microsoft-blue-800);
+    }
+    i:active {
+        scale: 0.9;
+    }
+</style>
