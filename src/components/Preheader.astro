@@ -1,21 +1,26 @@
 ---
 import microsoftIcon from "../assets/microsoftIcon.png"
-/* Toma las propiedades que se le pasen por parametro */
-const { ...props } = Astro.props
-
-
 ---
 
-<div>
+<div transition:name="preheader">
     <figure>
-        <img src={microsoftIcon.src} width={microsoftIcon.width} height={microsoftIcon.height} alt="Icono de microsoft"/>
-        <figcaption>Microsoft</figcaption>
+        <a href="/">
+            <img transition:persist src={microsoftIcon.src} width={microsoftIcon.width} height={microsoftIcon.height} alt="Icono de microsoft"/>
+            <figcaption>Microsoft</figcaption>
+        </a>
         <hr />
         <p>Plataforma de Datos</p>
     </figure>
-    <a href="https://www.microsoft.com/es-es/sql-server/sql-server-downloads">
-        Probar SQL Server 2022
-    </a>
+    <section>
+        <ul>
+            <a href="/sobre-sql">¿Qué es?</a>
+            <a href="/instalacion">Instalación</a>
+            <a href="/documentacion">Documentacion</a>
+        </ul>
+        <a href="https://www.microsoft.com/es-es/sql-server/sql-server-downloads">
+            Probar SQL Server 2022
+        </a>
+    </section>
 </div>
 
 <style>
@@ -26,10 +31,18 @@ const { ...props } = Astro.props
         padding: clamp(0.5rem, 5vw, 1rem);
     }
     figure {
+        width: 50%;
         display: flex;
         align-items: center;
         gap: clamp(0.5rem, 3vw, 1rem);
     }
+
+    figure > a {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+
     figcaption {
         color: var(--microsoft-gray);
     }
@@ -44,11 +57,33 @@ const { ...props } = Astro.props
         height: 1.5rem;
     }
 
-    a {
+    section {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+    }
+    ul > a {
+        color: var(--microsoft-gray);
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+
+    ul > a:hover {
+        text-decoration: underline;
+    }
+
+    section > a {
         background-color: black;
         color: white;
         padding: 0.5rem;
         
         font-size: x-small;
+        margin-left: auto;
     }
 </style>

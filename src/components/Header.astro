@@ -3,13 +3,13 @@ const { ...props } = Astro.props
 
 ---
 
-<div class:list={["",]}>
+<header transition:name="header">
     <h1 class="fuente-subtitulos tamano-lg">Documentación de SQL Server</h1>
-</div>
+</header>
 
 <style>
 
-    div {
+    header {
         background-color: var(--microsoft-blue-600);
         color: var(--microsoft-blue-50);
         padding: 2rem;
