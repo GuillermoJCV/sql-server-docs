@@ -55,7 +55,9 @@ const { title } = Astro.props;
 	}
 
 	h1,h2,h3,h4,h5,h6 {
-		font-family: "Montserrat Subrayada", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+		font-family: "Montserrat", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+		font-weight: 400;
+		line-height: 1.5rem;
 	}
 
 	/* Fuentes */
@@ -99,6 +101,33 @@ const { title } = Astro.props;
 		list-style: none;
 	}
 
+	table {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.5rem;
+	}
+
+	thead {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	tbody {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 0.1rem;
+	}
+
+	tr {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		width: 100;
+	}
+
+
+
 	/* Colores globales */
 	/* Referencia https://uicolors.app/create */
 	:root {
@@ -114,24 +143,44 @@ const { title } = Astro.props;
 		--microsoft-blue-900 	: #0b416f;
 		--microsoft-blue-950 	: #07294a;
 
+		--microsoft-blue-darker : #03101E;
+
 		--microsoft-gray 		: #737373;
 	}
 
 	/* Tamaños de pantalla */
 
-	/* Si mide menos de 640 pixeles */
+	/* Si es de celular */
 	:root {
 		--flex-col-si-es-muy-pequeno : column;
 		--flex-row-si-es-muy-pequeno : row;
-		--esconder-si-es-muy-pequeno : none;
+		--esconder-block-si-es-muy-pequeno : none;
+		--esconder-flex-si-es-muy-pequeno : none;
+		--mostrar-flex-si-es-muy-pequeno : flex;
+
+		/* Panel */
+		--panel-position : fixed;
+		--panel-margin : auto;
+		--panel-tamano : 75%;
+		--panel-activado : translateX(0%);
+		--panel-desactivado : translateX(-100%);
 	}
 
-	/* Si mide más de 640px */
+	/* Si la pantalla es más grande que un celular */
 	@media (min-width: 640px) {
 		:root {
 			--flex-col-si-es-muy-pequeno : row;
 			--flex-row-si-es-muy-pequeno : column;
-			--esconder-si-es-muy-pequeno : block;
+			--esconder-block-si-es-muy-pequeno : block;
+			--esconder-flex-si-es-muy-pequeno : flex;
+			--mostrar-flex-si-es-muy-pequeno : none;
+
+			/* Panel */
+			--panel-position : relative;
+			--panel-margin : null;
+			--panel-tamano : 25%;
+			--panel-activado : translateX(-100%);
+			--panel-desactivado : translateX(0%);
 		}
 	}
 	
