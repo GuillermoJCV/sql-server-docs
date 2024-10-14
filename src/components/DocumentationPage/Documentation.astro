@@ -1,4 +1,6 @@
 ---
+import DataTypeTable from "./DocumentationComponent/DataTypeTable.astro";
+
 
 ---
 
@@ -73,64 +75,13 @@
 
     <article class="tabla-article">
         <h3>Tipos de datos</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Tipo</th>
-                    <th>Descripción</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>char(n)</td>
-                    <td>Descripcion del tipo char(n)</td>
-                </tr>
-                <tr>
-                    <td>varchar(n)</td>
-                    <td>Descripcion del tipo varchar(n)</td>
-                </tr>
-                <tr>
-                    <td>varchar(max)</td>
-                    <td>Descripcion del tipo varchar(max)</td>
-                </tr>
-                <tr>
-                    <td>text</td>
-                    <td>Descripcion del tipo text</td>
-                </tr>
-                <tr>
-                    <td>nchar</td>
-                    <td>Descripcion del tipo nchar</td>
-                </tr>
-                <tr>
-                    <td>nvarchar</td>
-                    <td>Descripcion del tipo nvarchar</td>
-                </tr>
-                <tr>
-                    <td>nvarchar(max)</td>
-                    <td>Descripcion del tipo nvarchar(max)</td>
-                </tr>
-                <tr>
-                    <td>ntext</td>
-                    <td>Descripcion del tipo ntext</td>
-                </tr>
-                <tr>
-                    <td>binary(n)</td>
-                    <td>Descripcion del tipo binary(n)</td>
-                </tr>
-                <tr>
-                    <td>varbinary</td>
-                    <td>Descripcion del tipo varbinary</td>
-                </tr>
-                <tr>
-                    <td>varbinary(max)</td>
-                    <td>Descripcion del tipo varbinary(max)</td>
-                </tr>
-                <tr>
-                    <td>image</td>
-                    <td>Descripcion del tipo image</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <p>
+            Cada columna en una tabla debe tener un tipo de dato que define qué tipo de información puede almacenar.
+        </p>
+
+        <DataTypeTable />
+
     </article>
 
     <article>
@@ -177,57 +128,7 @@
 
     article.tabla-article {
         width: 100%;
-        align-items: center;
-    }
-
-    table {
-        padding: 1rem;
-        user-select: none;
-    }
-
-    thead > tr {
-        background-color: var(--microsoft-blue-200);
-        color: var(--microsoft-blue-950);
-        border-radius: 0.5rem;
-        padding: 0.3rem;
-    }
-
-    tr {
-        width: 100%;
-        max-width: clamp(35rem, 50vw, 40rem);
-        line-height: 2rem;
-        text-align: center;
-    }
-
-    tbody > tr {
-        background-color: var(--microsoft-blue-50);
-        border-radius: 0.5rem;
-        cursor: pointer;
-        scale: 1;
-        transition: scale 50ms;
-    }
-
-    tbody > tr:hover {
-        background-color: var(--microsoft-blue-100);
-    }
-
-    tbody > tr:active {
-        background-color: var(--microsoft-blue-100);
-        scale: 0.97;
-    }
-    
-    th {
-        font-weight: 500;
-        text-align: center;
-        font-size: clamp(1.1rem, 1vw, 1.5rem);
-    }
-
-    td:first-child {
-        text-align: center;
-    }
-
-    td {
-        text-align: left;
+        align-items: flex-start;
     }
 
 </style>
