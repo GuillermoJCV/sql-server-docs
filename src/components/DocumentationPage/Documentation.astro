@@ -1,6 +1,10 @@
 ---
-import DataTypeTable from "./DocumentationComponent/DataTypeTable.astro";
-
+import { Image } from "astro:assets";
+import TablasFilasYColumnas from "../../assets/documentacion/TablasFilasYColumnas.png";
+import DataTypeTableNumeric from "./DocumentationComponent/DataTypeTableNumeric.astro";
+import DataTypeTableStrings from "./DocumentationComponent/DataTypeTableStrings.astro";
+import DataTypeTableDatetime from "./DocumentationComponent/DataTypeTableDatetime.astro";
+import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBooleans.astro";
 
 ---
 
@@ -25,6 +29,32 @@ import DataTypeTable from "./DocumentationComponent/DataTypeTable.astro";
 
     <article>
         <h3>Tablas</h3>
+
+        <p>
+            Piensa en una tabla como una hoja de cálculo de Excel. 
+            Cada tabla almacena datos relacionados en filas y columnas. 
+            Por ejemplo, podrías tener una tabla llamada Clientes donde cada fila representa un cliente 
+            y cada columna representa información sobre ese cliente (como nombre, apellido, email, etc.).
+        </p>
+
+        <h5>Filas</h5>
+
+        <p>
+            Cada fila en una tabla es un registro individual. 
+            En la tabla Clientes, cada fila podría representar a un cliente específico.
+        </p>
+
+        <h5>Columnas</h5>
+
+        <p>
+            Cada columna representa un tipo de dato. En la tabla Clientes, 
+            podrías tener columnas para ID, Nombre, Apellido, y Email.
+        </p>
+
+        <span class="h-fit w-fit">
+            <Image src={TablasFilasYColumnas} alt="Ejemplo de tabla SQL (autos)" />
+        </span>
+
         <div>
             <h4>Crear Tabla</h4>
             <p>
@@ -80,7 +110,13 @@ import DataTypeTable from "./DocumentationComponent/DataTypeTable.astro";
             Cada columna en una tabla debe tener un tipo de dato que define qué tipo de información puede almacenar.
         </p>
 
-        <DataTypeTable />
+        <DataTypeTableNumeric />
+
+        <DataTypeTableStrings />
+
+        <DataTypeTableDatetime />
+
+        <DataTypeTableBooleans />
 
     </article>
 
@@ -113,6 +149,21 @@ import DataTypeTable from "./DocumentationComponent/DataTypeTable.astro";
 
     h2 {
         font-weight: 500;
+    }
+    h3 {
+        font-weight: 800;
+    }
+    h4 {
+        font-weight: 700;
+    }
+    h5 {
+        font-weight: 600;
+    }
+
+    span {
+        max-width: 100%;
+        overflow-x: auto;
+        border-radius: 1rem;
     }
     
     article {

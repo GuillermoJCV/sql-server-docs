@@ -1,0 +1,114 @@
+---
+
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Tipos Numericos</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>int (Entero)</td>
+            <td>
+                Utilizado para almacenar números enteros. Es de 4 bytes y su rango es de 
+                -2.147.483.648 hasta 2.147.483.647.
+            </td>
+        </tr>
+        <tr>
+            <td>smallint (Entero)</td>
+            <td>
+                Similar a int, pero ocupa 2 bytes. Su rango es de -32,768 a 32,767
+            </td>
+        </tr>
+        <tr>
+            <td>tinyint (Entero)</td>
+            <td>
+                Un entero pequeño sin signo que ocupa solo 1 byte, con un rango de 0 a 255
+            </td>
+        </tr>
+        <tr>
+            <td>bigint (Entero)</td>
+            <td>
+                Un entero grande que ocupa 8 bytes. 
+                Tiene un rango de -9,223,372,036,854,775,808 a 9,223,372,036,854,775,807
+            </td>
+        </tr>
+        <tr>
+            <td>float (Decimal)</td>
+            <td>
+                Utilizado para números de punto flotante. Ejemplo : 3.14159...
+            </td>
+        </tr>
+        <tr>
+            <td>decimal y numeric (Decimal)</td>
+            <td>
+                Son números decimales con precisión y escala definidas por el usuario. 
+                Por ejemplo, decimal(5,2) almacena números con hasta 5 dígitos en total, 
+                de los cuales 2 son decimales
+            </td>
+        </tr>
+        <tr>
+            <td>money</td>
+            <td>
+                Almacena valores monetarios con precisión fija y tiene un rango de 
+                -922,337,203,685,477.5808 a 922,337,203,685,477.5807
+            </td>
+        </tr>
+        <tr>
+            <td>smallmoney</td>
+            <td>
+                Similar a money, pero con un rango más pequeño y menos precisión
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    table {
+        padding: 1rem;
+        user-select: none;
+        align-self: center;
+    }
+
+    thead > tr {
+        background-color: var(--microsoft-blue-200);
+        color: var(--microsoft-blue-950);
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    tr {
+        width: 100%;
+        max-width: clamp(35rem, 50vw, 40rem);
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    tbody > tr {
+        background-color: var(--microsoft-blue-50);
+        border-radius: 0.5rem;
+        align-items: center;
+        scale: 1;
+    }
+
+    tbody > tr:hover {
+        background-color: var(--microsoft-blue-100);
+    }
+    
+    th {
+        font-weight: 500;
+        text-align: center;
+        font-size: clamp(1.1rem, 1vw, 1.5rem);
+    }
+
+    td:first-child {
+        text-align: center;
+    }
+
+    td {
+        text-align: left;
+    }
+</style>

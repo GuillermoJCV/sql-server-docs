@@ -5,58 +5,50 @@
 <table>
     <thead>
         <tr>
-            <th>Tipo</th>
+            <th>Tipos para Cadenas de Texto</th>
             <th>Descripción</th>
         </tr>
     </thead>
     <tbody>
         <tr>
             <td>char(n)</td>
-            <td>Descripcion del tipo char(n)</td>
+            <td>
+                Una cadena de caracteres de longitud fija que ocupa n bytes. 
+                Si la cadena es más corta que n, se llena con espacios
+            </td>
         </tr>
         <tr>
             <td>varchar(n)</td>
-            <td>Descripcion del tipo varchar(n)</td>
-        </tr>
-        <tr>
-            <td>varchar(max)</td>
-            <td>Descripcion del tipo varchar(max)</td>
+            <td>
+                Una cadena de caracteres de longitud variable que ocupa hasta n bytes. 
+                Solo ocupa el espacio necesario para los datos que almacena
+            </td>
         </tr>
         <tr>
             <td>text</td>
-            <td>Descripcion del tipo text</td>
+            <td>
+                Una cadena de caracteres de longitud variable que
+                puede contener hasta 2^31-1 caracteres
+            </td>
         </tr>
         <tr>
-            <td>nchar</td>
-            <td>Descripcion del tipo nchar</td>
+            <td>nchar(n)</td>
+            <td>
+                Similar a char, pero almacena datos Unicode, 
+                lo que permite una mayor variedad de caracteres y lenguajes
+            </td>
         </tr>
         <tr>
-            <td>nvarchar</td>
-            <td>Descripcion del tipo nvarchar</td>
-        </tr>
-        <tr>
-            <td>nvarchar(max)</td>
-            <td>Descripcion del tipo nvarchar(max)</td>
+            <td>nvarchar(n)</td>
+            <td>
+                Similar a varchar, pero almacena datos Unicode
+            </td>
         </tr>
         <tr>
             <td>ntext</td>
-            <td>Descripcion del tipo ntext</td>
-        </tr>
-        <tr>
-            <td>binary(n)</td>
-            <td>Descripcion del tipo binary(n)</td>
-        </tr>
-        <tr>
-            <td>varbinary</td>
-            <td>Descripcion del tipo varbinary</td>
-        </tr>
-        <tr>
-            <td>varbinary(max)</td>
-            <td>Descripcion del tipo varbinary(max)</td>
-        </tr>
-        <tr>
-            <td>image</td>
-            <td>Descripcion del tipo image</td>
+            <td>
+                Similar a text, pero almacena datos Unicode
+            </td>
         </tr>
     </tbody>
 </table>
@@ -85,18 +77,12 @@
     tbody > tr {
         background-color: var(--microsoft-blue-50);
         border-radius: 0.5rem;
-        cursor: pointer;
+        align-items: center;
         scale: 1;
-        transition: scale 50ms;
     }
 
     tbody > tr:hover {
         background-color: var(--microsoft-blue-100);
-    }
-
-    tbody > tr:active {
-        background-color: var(--microsoft-blue-100);
-        scale: 0.97;
     }
     
     th {

@@ -34,12 +34,11 @@ import CardInfo from "./CardInfo.astro"
         href="/sobre-sql"
     >
         <p>
-            Según palabras de Microsoft,
-            se trata de un sistema de administración de bases de datos relacionales.
+            SQL Server es un sistema de gestión de bases de datos relacional (RDBMS)
+            desarrollado y comercializado por Microsoft. 
         </p>
         <p>
-            
-            O abreviando, RDBMS.
+            Su función principal es almacenar y recuperar datos utilizados por otras aplicaciones.
         </p>
     </CardInfo>
 
@@ -52,8 +51,13 @@ import CardInfo from "./CardInfo.astro"
         href="/documentacion"
     >
     <p>
-        Aprende cómo se administra una base de datos relacional con SQL Server.
+        En esta sección vamos a desglosar la estructura de una base de datos SQL de una forma sencilla
     </p>
+    <ul>
+        <li>Tipos de datos</li>
+        <li>Consultas</li>
+        <li>Etcétera</li>
+    </ul>
     </CardInfo>
 </div>
 
@@ -64,6 +68,12 @@ import CardInfo from "./CardInfo.astro"
         flex-wrap: wrap;
 
         text-align: center;
-    
+    }
+
+    ul {
+        list-style: disc;
+        text-align: left;
+        padding-block: 0.5rem;
+        padding-inline: 1rem;
     }
 </style>
