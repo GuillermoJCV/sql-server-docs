@@ -1,0 +1,85 @@
+---
+
+---
+
+<table>
+    <thead>
+        <tr>
+            <th>Consulta</th>
+            <th>Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>CREATE</td>
+            <td>
+                Se utiliza para crear objetos en la base de datos, como tablas, vistas, índices, etc
+            </td>
+        </tr>
+        <tr>
+            <td>ALTER</td>
+            <td>
+                Modifica la estructura de un objeto existente en la base de datos
+            </td>
+        </tr>
+        <tr>
+            <td>DROP</td>
+            <td>
+                Elimina objetos de la base de datos
+            </td>
+        </tr>
+        <tr>
+            <td>TRUNCATE</td>
+            <td>
+                Elimina todos los registros de una tabla, pero mantiene la estructura de la tabla.
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<style>
+    table {
+        padding: 1rem;
+        user-select: none;
+        align-self: center;
+    }
+
+    thead > tr {
+        background-color: var(--microsoft-blue-200);
+        color: var(--microsoft-blue-950);
+        border-radius: 0.5rem;
+        padding: 0.3rem;
+    }
+
+    tr {
+        width: 100%;
+        max-width: clamp(35rem, 50vw, 40rem);
+        line-height: 2rem;
+        text-align: center;
+    }
+
+    tbody > tr {
+        background-color: var(--microsoft-blue-50);
+        border-radius: 0.5rem;
+        align-items: center;
+        scale: 1;
+    }
+
+    tbody > tr:hover {
+        background-color: var(--microsoft-blue-100);
+    }
+    
+    th {
+        font-weight: 500;
+        text-align: center;
+        font-size: clamp(1.1rem, 1vw, 1.5rem);
+    }
+
+    td:first-child {
+        text-align: center;
+    }
+
+    td {
+        text-align: left;
+    }
+</style>
