@@ -1,15 +1,17 @@
 ---
+import { Image } from "astro:assets"
 import CardInfo from "../components/MainPage/CardInfo.astro";
 import Layout from "../layouts/Layout.astro";
 import PrimerIcono from "../assets/primerIcono.png"
 import SegundoIcono from "../assets/tercerIcono.png"
+import ManagementStudioEDA from "../assets/sobre-sql/ManagementStudioExploradorDeArchivos.png"
+import ObjectExplorer from "../assets/sobre-sql/ObjectExplorer.png"
 
 ---
 
 <Layout title="Sobre SQL Server">
 
     <main>
-        
         <h2 class="fuente-subtitulos tamano-lg">
 			Introducción a Microsoft SQL Server
 		</h2>
@@ -75,6 +77,47 @@ import SegundoIcono from "../assets/tercerIcono.png"
             </CardInfo>
         </section>
 
+        <h2>Estructura de SQL Management Studios</h2>
+        <h5>(Vease primero cómo realizar su <a href="/instalacion">instalación</a>)</h5>
+
+        <article>
+            <p>
+                El entorno de SQL Server incluye componentes como el <strong>Explorador de Objetos</strong>, 
+                el <strong>Editor de Consultas</strong>, el <strong>Editor de Procedimientos Almacenados</strong>, 
+                y otros. 
+                El Explorador de Objetos muestra la estructura de la base de datos, 
+                mientras que el Editor de Consultas permite escribir y ejecutar consultas SQL.
+            </p>
+            <span>
+                <Image  src={ManagementStudioEDA} 
+                        alt="Management Studio SQL Server Explorador de archivos"
+                        width={ManagementStudioEDA.width / 1.1} 
+                        height={ManagementStudioEDA.height / 1.1}
+                />
+            </span>
+            <p>
+                El <strong>Explorador de Objetos</strong> en SSMS proporciona una <strong>vista jerárquica</strong>
+                de la base de datos que incluye tablas, procedimientos almacenados, 
+                funciones, vistas y más. <strong>Permite navegar y administrar estos elementos</strong> 
+                de la base de datos. Esta vista <strong>incluye</strong> las <strong>bases de datos de Motor de 
+                base de datos de SQL Server</strong>, <strong>SQL Server Analysis Services</strong>, 
+                <strong>SQL Server Reporting Services</strong> y <strong>SQL Server Integration Services</strong>.
+            </p>
+            <span>
+                <Image  src={ObjectExplorer} 
+                        alt={"Management Studio SQL Server Object Explorer"}
+                        width={ObjectExplorer.width / 2} 
+                        height={ObjectExplorer.height / 2}
+                />
+            </span>
+            <p>
+                Al conectar a un servidor en SSMS, se pueden establecer diversas opciones como la autenticación 
+                (Windows o SQL Server), el nombre del servidor, la base de datos predeterminada, 
+                y opciones avanzadas como la configuración de la conexión y la seguridad.
+            </p>
+
+        </article>
+
     </main>
 
 </Layout>
@@ -110,13 +153,20 @@ import SegundoIcono from "../assets/tercerIcono.png"
     h2 {
         max-width: 30rem;
         font-weight: 500;
-        color: black;
+        color: var(--microsoft-blue-950);
         text-align: center;
     }
     h3 {
         font-weight: 600;
     }
     h4 {
+        font-weight: 500;
+    }
+    h5 {
+        font-weight: 400;
+    }
+    h5 > a {
+        text-decoration: var(--microsoft-blue-600) underline;
         font-weight: 500;
     }
 

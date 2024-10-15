@@ -8,6 +8,7 @@ import OpcionesDeSqlServer from "../assets/documentacion/OpcionesDeSqlServe.jpg"
 import DescargaDeSQL from "../assets/documentacion/DescargaDeSQL.png"
 import DescargaDeSMSS from "../assets/documentacion/DescargaDeSMSS.jpg"
 import LinkDeDescargaSMSS from "../assets/documentacion/LinkDeDescargaSMSS.jpg"
+import ServerConnection from "../assets/sobre-sql/ServerConnection.png"
 ---
 
 <Layout title="Instalacion">
@@ -114,9 +115,39 @@ import LinkDeDescargaSMSS from "../assets/documentacion/LinkDeDescargaSMSS.jpg"
                 </span>
 
                 <p>
-                    Una vez descarga este programa solo debe ir a su explorador de archivos y darle click al archivo
-                    <strong>SQL2022-SSEI-Dev.exe</strong>
+                    Se iniciará una descarga de un archivo llamado <strong>“SSMS-Setup-ENU.exe” </strong>
+                    en el mismo lugar donde se visualizó la primera descarga. Cuando termine esta, 
+                    abrirá el archivo y en su lugar le aparecerá una ventana dándole la bienvenida a 
+                    Microsoft <strong>SQL Server Management Studio</strong>.  
+                    Le aparecerá una ventana emergente que le 
+                    preguntará si permite que la app realice cambios en el dispositivo, <strong>presione “SI”</strong>. 
+                    A continuación no tiene que hacer más que presionar <strong>“Install”</strong> tal como indica.
                 </p>
+
+                <p>
+                    Completa la descarga exitosamente debería decirle <strong>“Setup completed”</strong>, 
+                    luego solo cierre la ventana seleccionando el botón <strong>“Close”</strong> debajo.
+                </p>
+
+                <p>
+                    Ahora vuelva al SQL Server Installer y seleccione <strong>“Connect Now”</strong> para conectarse a un servidor.
+                </p>
+
+                <span>
+                    <Image  src={ServerConnection} 
+                            alt={"Management Studio SQL Server Server Connection"}
+                            width={ServerConnection.width / 1.5} 
+                            height={ServerConnection.height / 1.5}
+                    />
+                </span>
+                
+                <p>
+                    Al conectarse a un servidor en SSMS, se pueden establecer diversas opciones 
+                    como la autenticación (Windows o SQL Server), el nombre del servidor, 
+                    la base de datos predeterminada, y opciones avanzadas como la configuración de 
+                    la conexión y la seguridad.
+                </p>
+
             </div>
         </article>
 

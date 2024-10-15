@@ -1,10 +1,35 @@
 ---
 import { Image } from "astro:assets";
+
+import CrearBaseDeDatosPrimerPaso from "../../assets/documentacion/CrearBaseDeDatosPrimerPaso.png";
+import CrearBaseDeDatosSegundoPaso from "../../assets/documentacion/CrearBaseDeDatosSegundoPaso.png"
 import TablasFilasYColumnas from "../../assets/documentacion/TablasFilasYColumnas.png";
+import EjecutarConsultaCrearBaseDeDatos from "../../assets/documentacion/EjecutarConsultaCrearBaseDeDatos.png"
+import BuscarBaseDeDatos from "../../assets/documentacion/BuscarBaseDeDatos.png"
+import ConfirmarExistenciaBaseDeDatos from "../../assets/documentacion/ConfirmarExistenciaBaseDeDatos.png"
+import ConfirmarEliminacion from "../../assets/documentacion/ConfirmarEliminacion.png"
+
 import DataTypeTableNumeric from "./DocumentationComponent/DataTypeTableNumeric.astro";
 import DataTypeTableStrings from "./DocumentationComponent/DataTypeTableStrings.astro";
 import DataTypeTableDatetime from "./DocumentationComponent/DataTypeTableDatetime.astro";
 import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBooleans.astro";
+
+import { Content as CrearBaseDeDatos } from "../../codes/database/crear-base-de-datos.md"
+
+import { Content as AlterarTabla } from "../../codes/tablas/alterar-tabla.md"
+import { Content as CrearTabla } from "../../codes/tablas/crear-tabla.md"
+import { Content as EliminarTabla } from "../../codes/tablas/eliminar-tabla.md"
+
+import { Content as InsertarDatos } from "../../codes/queries/insertar-datos.md"
+import { Content as LeerDatos } from "../../codes/queries/leer-datos.md"
+import { Content as ActualizarDatos } from "../../codes/queries/actualizar-datos.md"
+import { Content as EliminarDatos } from "../../codes/queries/eliminar-datos.md"
+
+import { Content as CrearClavePrimaria } from "../../codes/keys/crear-clave-primaria.md"
+import { Content as CrearClaveForanea } from "../../codes/keys/crear-clave-foranea.md"
+
+import ConsultTypeTableDDL from "./DocumentationComponent/ConsultTypeTableDDL.astro";
+import ConsultTypeTableDML from "./DocumentationComponent/ConsultTypeTableDML.astro";
 
 ---
 
@@ -12,23 +37,163 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
     <h2>SQL Server</h2>
 
     <article>
-        <h3>Bases de datos</h3>
+        <h3 id="bases-de-datos">Bases de datos</h3>
         <div>
-            <h4>Crear bases de datos</h4>
+            <h4 id="crear-bases-de-datos">Crear bases de datos</h4>
             <p>
-                Codigo e instrucciones para crear una base de datos
+                Para crear su base de datos, tiene que crear una nueva query, 
+                para esto debe de seleccionar el botón que dice <strong>“New Query”</strong> en su área de trabajo.
             </p>
+            <span>
+                <Image src={CrearBaseDeDatosPrimerPaso} alt="Ejemplo de tabla SQL (autos)" />
+            </span>
+
+            <p>
+                Después aparecerá su consulta, que le permitirá escribir código para crear su base de datos.
+            </p>
+
+            <span>
+                <Image  src={CrearBaseDeDatosSegundoPaso} 
+                        alt="Ejemplo de tabla SQL (autos)"
+                        width={CrearBaseDeDatosPrimerPaso.width}
+                        height={CrearBaseDeDatosPrimerPaso.height}
+                 />
+            </span>
+
+            <p>
+                Y una vez ahí puede empezar a escribir su código para crear una base de datos, 
+                para lo cual deberá escribir 
+            </p>
+            <CrearBaseDeDatos />
+            <p>
+                y después para ejecutar debe de seleccionar el código que desea ejecutar y darle clic a 
+                <strong>“Execute”</strong>, más abajo le dará los resultados de su ejecución.
+            </p>
+
+            <span>
+                <Image  src={EjecutarConsultaCrearBaseDeDatos} 
+                        alt="ejemplo para ejecutar consulta"
+                        width={EjecutarConsultaCrearBaseDeDatos.width}
+                        height={EjecutarConsultaCrearBaseDeDatos.height}
+                />
+            </span>
+
         </div>
         <div>
-            <h4>Eliminar bases de datos</h4>
+            <h4 id="eliminar-bases-de-datos">Eliminar bases de datos</h4>
             <p>
-                Codigo e instrucciones para eliminar una base de datos
+                Recuerda que este proceso es irreversible, 
+                así que asegúrate de hacer copias de seguridad de cualquier 
+                dato importante antes de proceder.
             </p>
+
+            <h5>1. Buscar la base de datos en el Explorador de objetos</h5>
+            <p>
+                En el Explorador de Objetos, expanda la carpeta <strong>"Bases de datos"</strong> (Databases) 
+                para ver todas las bases de datos disponibles.
+            </p>
+
+            <span>
+                <Image  src={BuscarBaseDeDatos} 
+                        alt="Buscar base de datos en el explorador de archivos de SQL Server"
+                        width={BuscarBaseDeDatos.width}
+                        height={BuscarBaseDeDatos.height}
+                />
+            </span>
+
+            <h5>2. Encuentre la base de datos que deseas eliminar. Haz clic derecho sobre ella.</h5>
+
+            <h5>3. Selecciona la opción "Eliminar" (Delete) en el menú contextual.</h5>
+
+            <span>
+                <Image  src={ConfirmarExistenciaBaseDeDatos} 
+                        alt="Confirmar existencia de base de datos"
+                        width={ConfirmarExistenciaBaseDeDatos.width}
+                        height={ConfirmarExistenciaBaseDeDatos.height}
+                />
+            </span>
+
+            <h5>4. Confirmar Eliminación</h5>
+
+            <p>
+                Aparecerá un cuadro de diálogo de confirmación. 
+                <strong>Asegúrate</strong> de que la casilla 
+                <strong>"Cerrar conexiones existentes"</strong> (Close existing connections) 
+                esté marcada si quieres cerrar todas las conexiones activas a la base de datos antes de eliminarla. 
+                Luego, haz clic en <strong>"Aceptar"</strong> (OK) para confirmar la eliminación.
+            </p>
+
+            <span>
+                <Image  src={ConfirmarEliminacion} 
+                        alt="Confirmar eliminación de base de datos"
+                        width={ConfirmarEliminacion.width}
+                        height={ConfirmarEliminacion.height}
+                />
+            </span>
+
         </div>
     </article>
 
     <article>
-        <h3>Tablas</h3>
+        <h2 id="consultas">
+            Consultas en SQL Server
+        </h2>
+
+        <h3 id="consulta-definicion">¿Qué es una consulta?</h3>
+        <p>
+            Las consultas en SQL Server son <strong>instrucciones escritas en SQL o T-SQL</strong> 
+            que permiten <strong>recuperar datos</strong> de una base de datos. 
+            Estas pueden ser <strong>simples</strong>, 
+            solicitando datos <strong>de una sola tabla</strong>, o <strong>complejas</strong>, 
+            involucrando <strong>múltiples tablas</strong>, 
+            <strong>funciones</strong>, y <strong>lógica condicional</strong> para obtener 
+            información específica.
+        </p>
+
+        <h3 id="consulta-funcion">¿Cómo funciona una consulta en SQL Server?</h3>
+
+        <p>
+            Una consulta funciona <strong>enviando una instrucción SQL al servidor</strong> de base de datos, 
+            donde el motor de SQL procesa esta instrucción. 
+            El proceso generalmente implica analizar la consulta para entender la solicitud, 
+            planificar la mejor manera de obtener los datos (optimización de la consulta), 
+            ejecutar el plan accediendo a las tablas y datos necesarios, 
+            y <strong>finalmente, retornar los resultados</strong> al 
+            usuario o aplicación que hizo la solicitud.
+        </p>
+
+        <h3 id="consulta-uso">¿Para qué sirve una consulta en SQL Server?</h3>
+
+        <p>
+            Una consulta en SQL <strong>sirve para interactuar con la base de datos </strong>
+            y realizar operaciones como 
+            <strong>seleccionar (recuperar), insertar, actualizar, y eliminar datos</strong>. 
+            Permite a los usuarios y aplicaciones obtener información específica de la base de datos, 
+            modificar los datos almacenados, y gestionar la estructura de la base de datos en sí
+        </p>
+
+        <h2>Tipos de consulta</h2>
+        <h3>DDL (Data Definition Language)</h3>
+        <p>
+            Instrucciones que definen la estructura de la base de datos, como tablas y relaciones. 
+            Verbos básicos incluyen 
+            <strong>CREATE</strong> (crear), <strong>ALTER</strong> (modificar), <strong>DROP</strong> (eliminar)
+        </p>
+        <ConsultTypeTableDDL />
+
+        <h3>DML (Data Manipulation Language)</h3>
+        <p>
+            Instrucciones que permiten manipular los datos almacenados en la base de datos. 
+            Verbos básicos incluyen 
+            <strong>SELECT</strong> (seleccionar), <strong>INSERT</strong> (insertar), 
+            <strong>UPDATE</strong> (actualizar), <strong>DELETE</strong> (eliminar)
+        </p>
+        <ConsultTypeTableDML />
+
+    </article>
+
+    <article>
+        <h3 id="tablas">Tablas</h3>
 
         <p>
             Piensa en una tabla como una hoja de cálculo de Excel. 
@@ -37,14 +202,14 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
             y cada columna representa información sobre ese cliente (como nombre, apellido, email, etc.).
         </p>
 
-        <h5>Filas</h5>
+        <h5 id="filas">Filas</h5>
 
         <p>
             Cada fila en una tabla es un registro individual. 
             En la tabla Clientes, cada fila podría representar a un cliente específico.
         </p>
 
-        <h5>Columnas</h5>
+        <h5 id="columnas">Columnas</h5>
 
         <p>
             Cada columna representa un tipo de dato. En la tabla Clientes, 
@@ -56,82 +221,131 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
         </span>
 
         <div>
-            <h4>Crear Tabla</h4>
+            <h4 id="crear-tabla">Crear Tabla</h4>
             <p>
-                Codigo e instrucciones para crear una tabla
+                Para crear una tabla utilizamos el comando <strong>CREATE TABLE</strong>
+                junto al nombre que tendrá la tabla y sus campos los cuales se pueden ver en
+                <a href="#tipos-de-datos">los tipos de datos</a>
             </p>
+            <CrearTabla />
         </div>
         <div>
-            <h4>Eliminar Tabla</h4>
+            <h4 id="eliminar-tabla">Eliminar Tabla</h4>
             <p>
-                Codigo e instrucciones para eliminar una tabla
+                Para eliminar una tabla utilizamos el comando <strong>DROP TABLE</strong>
+                junto al nombre de la tabla
             </p>
+            <EliminarTabla />
         </div>
         <div>
-            <h4>Alterar Tabla</h4>
+            <h4 id="alterar-tabla">Alterar Tabla</h4>
             <p>
-                Codigo e instrucciones para alterar una tabla
+                Para alterar una tabla utilizamos el comando <strong>ALTER TABLE</strong>
+                junto al nombre de la tabla y sus campos los cuales se pueden ver en
+                <a href="#tipos-de-datos">los tipos de datos</a>
             </p>
+            <AlterarTabla />
         </div>
     </article>
 
     <article>
-        <h3>Consultas</h3>
+        <h3 id="queries">Queries</h3>
         <div>
-            <h4>Insertar Datos</h4>
+            <h4 id="insertar-datos">Insertar Datos</h4>
             <p>
-                Codigo e instrucciones para insertar datos en una tabla
+                Para insertar datos utilizamos el comando <strong>INSERT INTO</strong>
+                junto al nombre de la tabla y sus campos los cuales se pueden ver en
+                <a href="#tipos-de-datos">los tipos de datos</a>
             </p>
+            <InsertarDatos />
         </div>
         <div>
-            <h4>Leer Datos</h4>
+            <h4 id="leer-datos">Leer Datos</h4>
             <p>
-                Codigo e instrucciones para leer datos de una tabla
+                Para leer datos utilizamos el comando <strong>SELECT</strong>
+                junto al nombre de la tabla y sus campos los cuales se pueden ver en
+                <a href="#tipos-de-datos">los tipos de datos</a>
             </p>
+            <LeerDatos />
         </div>
         <div>
-            <h4>Actualizar Datos</h4>
+            <h4 id="actualizar-datos">Actualizar Datos</h4>
             <p>
-                Codigo e instrucciones para actualizar datos de una tabla
+                Para actualizar datos utilizamos el comando <strong>UPDATE</strong>
+                junto al nombre de la tabla y sus campos los cuales se pueden ver en
+                <a href="#tipos-de-datos">los tipos de datos</a>
             </p>
+            <ActualizarDatos />
         </div>
         <div>
-            <h4>Eliminar Datos</h4>
+            <h4 id="eliminar-datos">Eliminar Datos</h4>
             <p>
-                Codigo e instrucciones para eliminar datos de una tabla
+                Para eliminar datos utilizamos el comando <strong>DELETE</strong>
+                junto al nombre de la tabla y sus campos los cuales se pueden ver en
+                <a href="#tipos-de-datos">los tipos de datos</a>
             </p>
+            <EliminarDatos />
         </div>
     </article>
 
     <article class="tabla-article">
-        <h3>Tipos de datos</h3>
+        <h3 id="tipos-de-datos">Tipos de datos</h3>
 
         <p>
             Cada columna en una tabla debe tener un tipo de dato que define qué tipo de información puede almacenar.
         </p>
 
-        <DataTypeTableNumeric />
+        <section id="tipos-numericos">
+            <DataTypeTableNumeric />
+        </section>
 
-        <DataTypeTableStrings />
+        <section id="tipos-cadenas-de-texto">
+            <DataTypeTableStrings />
+        </section>
 
-        <DataTypeTableDatetime />
+        <section id="tipos-fecha-hora">
+            <DataTypeTableDatetime />
+        </section>
 
-        <DataTypeTableBooleans />
+        <section id="tipos-booleanos">
+            <DataTypeTableBooleans />
+        </section>
 
     </article>
 
     <article>
-        <h3>Claves</h3>
+        <h3 id="claves">Claves</h3>
         <div>
-            <h4>Claves primarias</h4>
+            <h4 id="claves-primarias">Claves primarias</h4>
             <p>
-                Codigo e instrucciones para crear una primaria
+                La clave primaria es un <strong>campo en una tabla</strong> que se utiliza para 
+                identificar de manera <strong>única</strong> cada fila de esa tabla. 
+                <strong>No puede</strong> contener <strong>valores nulos</strong> y cada valor debe ser único.
+                Por ejemplo, en la tabla Clientes, el ID podría ser la clave primaria, 
+                asegurando que cada cliente tenga un ID único.
+            </p>
+            <CrearClavePrimaria />
+            <p>
+                Aquí, el campo ID es la clave prima tabla, estableciendo una relación entre ambas. 
+            </p>
+            <p>
+                Por ejemplo, podrías tener una tabla Pedidos donde cada pedido está asociado a 
+                un cliente en la tabla Clientes. La columna ClienteID en la tabaria. 
+                Esto significa que cada cliente tendrá un ID único, y no puede haber dos clientes con el mismo ID.
             </p>
         </div>
         <div>
-            <h4>Claves foraneas</h4>
+            <h4 id="claves-foraneas">Claves foraneas</h4>
             <p>
-                Codigo e instrucciones para crear una clave foranea
+                La clave foránea es un campo en una tabla que crea un 
+                <strong>vínculo entre los datos de dos tablas</strong>. 
+                Esencialmente, hace referencia a la clave primaria de otrla Pedidos sería una clave foránea 
+                que referencia al ID en la tabla Clientes.
+            </p>
+            <CrearClaveForanea />
+            <p>
+                Aquí, el campo ClienteID en la tabla Pedidos es una clave foránea que hace referencia 
+                al campo ID en la tabla Clientes. Esto significa que cada pedido está asociado a un cliente específico.
             </p>
         </div>
     </article>
