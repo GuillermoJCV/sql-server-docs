@@ -12,15 +12,15 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
     <h2>SQL Server</h2>
 
     <article>
-        <h3>Bases de datos</h3>
+        <h3 id="bases-de-datos">Bases de datos</h3>
         <div>
-            <h4>Crear bases de datos</h4>
+            <h4 id="crear-bases-de-datos">Crear bases de datos</h4>
             <p>
                 Codigo e instrucciones para crear una base de datos
             </p>
         </div>
         <div>
-            <h4>Eliminar bases de datos</h4>
+            <h4 id="eliminar-bases-de-datos">Eliminar bases de datos</h4>
             <p>
                 Codigo e instrucciones para eliminar una base de datos
             </p>
@@ -28,7 +28,7 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
     </article>
 
     <article>
-        <h3>Tablas</h3>
+        <h3 id="tablas">Tablas</h3>
 
         <p>
             Piensa en una tabla como una hoja de cálculo de Excel. 
@@ -37,14 +37,14 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
             y cada columna representa información sobre ese cliente (como nombre, apellido, email, etc.).
         </p>
 
-        <h5>Filas</h5>
+        <h5 id="filas">Filas</h5>
 
         <p>
             Cada fila en una tabla es un registro individual. 
             En la tabla Clientes, cada fila podría representar a un cliente específico.
         </p>
 
-        <h5>Columnas</h5>
+        <h5 id="columnas">Columnas</h5>
 
         <p>
             Cada columna representa un tipo de dato. En la tabla Clientes, 
@@ -56,19 +56,19 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
         </span>
 
         <div>
-            <h4>Crear Tabla</h4>
+            <h4 id="crear-tabla">Crear Tabla</h4>
             <p>
                 Codigo e instrucciones para crear una tabla
             </p>
         </div>
         <div>
-            <h4>Eliminar Tabla</h4>
+            <h4 id="eliminar-tabla">Eliminar Tabla</h4>
             <p>
                 Codigo e instrucciones para eliminar una tabla
             </p>
         </div>
         <div>
-            <h4>Alterar Tabla</h4>
+            <h4 id="alterar-tabla">Alterar Tabla</h4>
             <p>
                 Codigo e instrucciones para alterar una tabla
             </p>
@@ -76,27 +76,27 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
     </article>
 
     <article>
-        <h3>Consultas</h3>
+        <h3 id="queries">Queries</h3>
         <div>
-            <h4>Insertar Datos</h4>
+            <h4 id="insertar-datos">Insertar Datos</h4>
             <p>
                 Codigo e instrucciones para insertar datos en una tabla
             </p>
         </div>
         <div>
-            <h4>Leer Datos</h4>
+            <h4 id="leer-datos">Leer Datos</h4>
             <p>
                 Codigo e instrucciones para leer datos de una tabla
             </p>
         </div>
         <div>
-            <h4>Actualizar Datos</h4>
+            <h4 id="actualizar-datos">Actualizar Datos</h4>
             <p>
                 Codigo e instrucciones para actualizar datos de una tabla
             </p>
         </div>
         <div>
-            <h4>Eliminar Datos</h4>
+            <h4 id="eliminar-datos">Eliminar Datos</h4>
             <p>
                 Codigo e instrucciones para eliminar datos de una tabla
             </p>
@@ -104,32 +104,40 @@ import DataTypeTableBooleans from "./DocumentationComponent/DataTypeTableBoolean
     </article>
 
     <article class="tabla-article">
-        <h3>Tipos de datos</h3>
+        <h3 id="tipos-de-datos">Tipos de datos</h3>
 
         <p>
             Cada columna en una tabla debe tener un tipo de dato que define qué tipo de información puede almacenar.
         </p>
 
-        <DataTypeTableNumeric />
+        <section id="tipos-numericos">
+            <DataTypeTableNumeric />
+        </section>
 
-        <DataTypeTableStrings />
+        <section id="tipos-cadenas-de-texto">
+            <DataTypeTableStrings />
+        </section>
 
-        <DataTypeTableDatetime />
+        <section id="tipos-fecha-hora">
+            <DataTypeTableDatetime />
+        </section>
 
-        <DataTypeTableBooleans />
+        <section id="tipos-booleanos">
+            <DataTypeTableBooleans />
+        </section>
 
     </article>
 
     <article>
-        <h3>Claves</h3>
+        <h3 id="claves">Claves</h3>
         <div>
-            <h4>Claves primarias</h4>
+            <h4 id="claves-primarias">Claves primarias</h4>
             <p>
                 Codigo e instrucciones para crear una primaria
             </p>
         </div>
         <div>
-            <h4>Claves foraneas</h4>
+            <h4 id="claves-foraneas">Claves foraneas</h4>
             <p>
                 Codigo e instrucciones para crear una clave foranea
             </p>

@@ -5,52 +5,52 @@ import HideToggler from "./PanelComponent/HideToggler.astro";
 
 
 <aside id="panel">
-    <h3 class="fuente-subtitulos">
-        Búsqueda rápida
-    </h3>
     <section>
+        <h3 class="fuente-subtitulos">
+            Búsqueda rápida
+        </h3>
         <article>
             <h4 class="fuente-legible">
-                Bases de datos
+                <a href="#bases-de-datos">Bases de datos</a>
             </h4>
             <ul>
-                <li>Crear bases de datos</li>
-                <li>Eliminar bases de datos</li>
+                <a href="#crear-bases-de-datos">Crear bases de datos</a>
+                <a href="#eliminar-bases-de-datos">Eliminar bases de datos</a>
             </ul>
         </article>
 
         <article>
             <h4 class="fuente-legible">
-                Tablas
+                <a href="#tablas">Tablas</a>
             </h4>
             <ul>
-                <li>Crear tabla</li>
-                <li>Eliminar tabla</li>
-                <li>Alterar tabla</li>
+                <a href="#crear-tabla">Crear tabla</a>
+                <a href="#eliminar-tabla">Eliminar tabla</a>
+                <a href="#alterar-tabla">Alterar tabla</a>
             </ul>
         </article>
 
         <article>
             <h4 class="fuente-legible">
-                Consultas
+                <a href="#queries">Queries</a>
             </h4>
             <ul>
-                <li>Insertar Datos</li>
-                <li>Leer Datos</li>
-                <li>Actualizar Datos</li>
-                <li>Eliminar Datos</li>
+                <a href="#insertar-datos">Insertar Datos</a>
+                <a href="#leer-datos">Leer Datos</a>
+                <a href="#actualizar-datos">Actualizar Datos</a>
+                <a href="#eliminar-datos">Eliminar Datos</a>
             </ul>
         </article>
 
         <article>
             <h4 class="fuente-legible">
-                Tipos de datos
+                <a href="#tipos-de-datos">Tipos de datos</a>
             </h4>
             <ul>
-                <li>Tipos numéricos</li>
-                <li>Tipos de cadenas de texto</li>
-                <li>Tipos para fechas</li>
-                <li>Tipos de boleanos</li>
+                <a href="#tipos-numericos">Tipos numéricos</a>
+                <a href="#tipos-cadenas-de-texto">Tipos de cadenas de texto</a>
+                <a href="#tipos-tipos-fecha-hora">Tipos para fechas</a>
+                <a href="#tipos-booleanos">Tipos de boleanos</a>
             </ul>
         </article>
 
@@ -59,8 +59,8 @@ import HideToggler from "./PanelComponent/HideToggler.astro";
                 Claves
             </h4>
             <ul>
-                <li>Claves primarias</li>
-                <li>Claves foraneas</li>
+                <a>Claves primarias</a>
+                <a>Claves foraneas</a>
             </ul>
         </article>
     </section>
@@ -78,7 +78,7 @@ import HideToggler from "./PanelComponent/HideToggler.astro";
         display: flex;
         flex-direction: column;
         width: var(--panel-tamano);
-        height: 100%;
+        height: inherit;
         border-right: 1px var(--microsoft-blue-darker);
         gap: 1rem;
         padding : clamp(0rem, 1vw, 1rem);
@@ -106,6 +106,10 @@ import HideToggler from "./PanelComponent/HideToggler.astro";
         display: flex;
         flex-direction: column;
         gap: 1rem;
+        padding-block: 1rem;
+        position: sticky;
+        height:100vh;
+        top: 0;
 
         overflow-y: auto;
     }
@@ -133,7 +137,7 @@ import HideToggler from "./PanelComponent/HideToggler.astro";
         flex-direction: column;
         gap: 0.5rem;
     }
-    li:hover {
+    ul > a:hover {
         color: var(--microsoft-blue-800);
         text-decoration: underline;
         cursor: pointer;
