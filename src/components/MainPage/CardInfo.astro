@@ -1,15 +1,12 @@
 ---
-/**
- * @param {
- *  title : string
- *  imagePath : string
- *  imageAlt : string
- *  background : string
- *  color : string
- *  class : string
- *  href : string
- * } props
- * **/
+interface Props {
+    title : string,
+    imagePath? : string,
+    imageAlt? : string,
+    background : string,
+    color : string,
+    href : string
+}
 const { title, imagePath, imageAlt,
         background, color, href
     } = Astro.props
@@ -17,7 +14,7 @@ const { title, imagePath, imageAlt,
 ---
 
 <section>
-    <img src={imagePath} alt={imageAlt} />
+    {imagePath && <img src={imagePath} alt={imageAlt} />}
     <h4 class="fuente-subtitulos">
         {title}
     </h4>
