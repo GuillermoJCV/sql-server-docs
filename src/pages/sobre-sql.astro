@@ -1,6 +1,8 @@
 ---
+import CardInfo from "../components/MainPage/CardInfo.astro";
 import Layout from "../layouts/Layout.astro";
-
+import PrimerIcono from "../assets/primerIcono.png"
+import SegundoIcono from "../assets/tercerIcono.png"
 
 ---
 
@@ -12,17 +14,123 @@ import Layout from "../layouts/Layout.astro";
 			Introducción a Microsoft SQL Server
 		</h2>
 
+        <article>
+            <h3>¿Qué es <strong>SQL Server</strong>?</h3>
+            <p>
+                SQL Server es un sistema de gestión de bases de datos relacional (RDBMS) desarrollado y comercializado por Microsoft. 
+                Su función principal es almacenar y recuperar datos utilizados por otras aplicaciones.
+            </p>
+
+            <h3>¿Cuál es el objetivo de SGBD o SSMS?</h3>
+
+            <p>
+                Los objetivos de un <strong>Sistema de Gestión de Bases de Datos (SGBD)</strong> 
+                o <strong>SQL Server Management Studio (SSMS)</strong> incluyen facilitar la creación, 
+                manipulación y consulta de bases de datos, así como asegurar la integridad, 
+                consistencia y seguridad de los datos almacenados.
+            </p>
+
+            <h3>Características de SQL Server</h3>
+            <p>
+                Algunas características de SQL Server son que incluye <strong>soporte para transacciones</strong>, 
+                <strong>procedimientos almacenados</strong>, <strong>funciones</strong>, <strong>replicación de datos</strong>, <strong>administración de usuarios</strong>, 
+                <strong>programación de tareas</strong>, y <strong>capacidades de análisis</strong> y <strong>generación de informes</strong>.
+            </p>
+        </article>
+
+        <section>
+            <CardInfo
+                title="Instalación"
+                imagePath={PrimerIcono.src}
+                imageAlt="instalacion"
+                background="var(--microsoft-blue-600)"
+                color="var(--microsoft-blue-50)"
+                href="/instalacion"
+            >
+                <p>
+                    Cómo instalar las diferentes
+                    versiones de SQL Server.
+                </p>
+                <p>
+                    Y su configuración básica para el uso diario.
+                </p>
+            </CardInfo>
+
+            <CardInfo
+                title="Documentación"
+                imagePath={SegundoIcono.src}
+                imageAlt="documentacion"
+                background="#2F2F2F"
+                color="#E5E5E5"
+                href="/documentacion"
+            >
+                <p>
+                    En esta sección vamos a desglosar la estructura de una base de datos SQL de una forma sencilla
+                </p>
+                <ul>
+                    <li>Tipos de datos</li>
+                    <li>Consultas</li>
+                    <li>Etcétera</li>
+                </ul>
+            </CardInfo>
+        </section>
+
     </main>
 
 </Layout>
 
 <style>
 
+    main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-inline: auto;
+        width: clamp(25rem, 75%, 45rem);
+    }
+
+    article {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    span {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
     h2 {
         max-width: 30rem;
-		font-weight: 500;
-		color: black;
-		text-align: center;
+        font-weight: 500;
+        color: black;
+        text-align: center;
+    }
+    h3 {
+        font-weight: 600;
+    }
+    h4 {
+        font-weight: 500;
+    }
+
+    section {
+        display: flex;
+        overflow: hidden;
+        border-radius: 1rem;
+    }
+
+    ul {
+        list-style: disc;
+        text-align: left;
+        padding-block: 0.5rem;
+        padding-inline: 1rem;
     }
 
 </style>
